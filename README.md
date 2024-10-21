@@ -1,7 +1,7 @@
 # cython-wasm
 Adding cythonized module to pyodide:
 
-sudo apt install Cython
+sudo apt install cython
 
 pip3 install exodide[all]
 

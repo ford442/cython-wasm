@@ -1,5 +1,5 @@
 # cython-wasm
-adding cythonized modules to pyodide
+Adding cythonized module to pyodide:
 
 git clone https://github.com/ford442/cython-wasm.git
 

@@ -1,15 +1,16 @@
 # cython-wasm
 adding cythonized modules to pyodide
 
-
+git clone https://github.com/ford442/cython-wasm.git
+cd cython-wasm
 cython cytho_pyo.pyx
+source /content/RAMDRIVE2/emsdk/emsdk_env.sh
+
 
 
 
 2. Cythonization
 
-Generate C code: Use the Cython compiler to translate your .pyx file into C code. This is typically done using the cython command or by invoking Cython within a setup.py script.
-Example: cython my_module.pyx
 3. Compilation with Emscripten
 
 Compile to WebAssembly: Use Emscripten to compile the generated C code into WebAssembly. This involves using Emscripten's compiler (emcc) and linker. You'll need to link against the Pyodide runtime and any other necessary libraries.

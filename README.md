@@ -11,8 +11,10 @@ cython cytho_pyo.pyx
 
 source /content/RAMDRIVE2/emsdk/emsdk_env.sh
 
+CC=emcc CXX=em++ python setup.py --command-packages exodide exodide_wheel
 
 
+pip3 install exodide
 
 
 2. Cythonization

@@ -2,8 +2,11 @@
 adding cythonized modules to pyodide
 
 git clone https://github.com/ford442/cython-wasm.git
+
 cd cython-wasm
+
 cython cytho_pyo.pyx
+
 source /content/RAMDRIVE2/emsdk/emsdk_env.sh
 
 

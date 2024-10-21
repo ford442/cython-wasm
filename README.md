@@ -1,6 +1,8 @@
 # cython-wasm
 Adding cythonized module to pyodide:
 
+sudo apt install Cython
+
 git clone https://github.com/ford442/cython-wasm.git
 
 cd cython-wasm
@@ -8,6 +10,7 @@ cd cython-wasm
 cython cytho_pyo.pyx
 
 source /content/RAMDRIVE2/emsdk/emsdk_env.sh
+
 
 
 
@@ -24,3 +27,21 @@ Create a Pyodide package: Package your compiled WebAssembly module and any assoc
 5. Integration with Pyodide
 
 Load the package in Pyodide: Use Pyodide's loadPackage function to load your custom package in the Pyodide environment.
+
+# exodide
+Install Exodide: If you haven't already, install Exodide using pip:
+
+pip install exodide
+
+Use Exodide to install your Cythonized module:
+
+Python
+import exodide
+exodide.install(module_path="path_to_your_cythonized_module.pyx")
+Use code with caution.
+
+Import and use the module:
+
+Python
+import my_module
+# Use my_module functions as needed

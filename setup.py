@@ -1,9 +1,6 @@
-from setuptools import setup, Extension
-from Cython.Build import cythonize
-import numpy as np
+from setuptools import setup
 from exodide import build
-
-# omit
+from Cython.Build import cythonize
 
 ext_modules = [Extension("image_processing", ["image_processing/image_processing.pyx"],extra_compile_args=["-Wno-implicit-function-declaration","-Wno-int-conversion"])]
 
@@ -15,7 +12,6 @@ setup(
         'opencv-python',
         'numpy'
     ],
-    # omit
     cmdclass=build.cmdclass(), # {'build': build.build, 'build_ext': build.build_ext}
     ext_modules = cythonize(ext_modules),
 )

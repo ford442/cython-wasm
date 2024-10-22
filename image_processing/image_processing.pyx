@@ -1,12 +1,11 @@
 
 import numpy as np
 cimport numpy as np
-# from skimage import exposure, transform
-# from skimage.filters import unsharp_mask
-# import cv2
+from skimage import exposure, transform
+from skimage.filters import unsharp_mask
+import cv2
 
-def process_tile(np.ndarray[np.uint8_t, ndim=2] tile):
-    cdef int rows, cols
+cdef np.ndarray[np.uint8_t, ndim=2] process_tile(np.ndarray[np.uint8_t, ndim=2] tile):    cdef int rows, cols
     cdef np.ndarray[np.float32_t, ndim=2] input_pts, output_pts
     cdef np.ndarray[np.float32_t, ndim=2] M 
     rows, cols = tile.shape[:2]

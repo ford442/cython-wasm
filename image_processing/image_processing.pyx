@@ -2,7 +2,12 @@ import numpy as np
 cimport numpy as np
 from skimage import exposure, transform
 from skimage.filters import unsharp_mask
+cimport skimage.exposure 
+cimport skimage.transform
 import cv2
+cimport cv2
+
+#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 
 cpdef np.ndarray[np.uint8_t, ndim=2] process_tile(np.ndarray[np.uint8_t, ndim=2] tile):
     cdef int rows, cols

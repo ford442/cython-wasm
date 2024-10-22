@@ -2,7 +2,7 @@ from setuptools import setup
 from Cython.Build import cythonize
 
 # Define your custom compile arguments
-compile_args = ["-O3",-Wno-implicit-function-declaration","-Wno-int-conversion"]
+compile_args = ["-O3","-Wno-implicit-function-declaration","-Wno-int-conversion"]
 
 setup(
     name="image_processing",

@@ -23,6 +23,8 @@ python3 ./get-pip.py
 
 pip3 install --upgrade setuptools
 
+pip3 install numpy
+
 pip3 install cython
 
 pip3 install exodide[all]

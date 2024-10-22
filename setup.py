@@ -9,7 +9,7 @@ setup(
         'scikit-image',
         'opencv-python'
     ],
-    ext_modules = cythonize("image_processing.pyx",compiler_directives={'language_level' : "3"}),
+    ext_modules = cythonize("image_processing/image_processing.pyx",compiler_directives={'language_level' : "3"}),
     cmdclass=build.cmdclass(),
 
 )

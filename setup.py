@@ -2,7 +2,7 @@ from setuptools import setup
 from exodide import build
 from Cython.Build import cythonize
 
-ext_modules = [Extension("image_processing", ["image_processing/image_processing.pyx"],extra_compile_args=["-Wno-implicit-function-declaration","-Wno-int-conversion"])]
+ext_modules = [cythonize("image_processing", ["image_processing/image_processing.pyx"],extra_compile_args=["-Wno-implicit-function-declaration","-Wno-int-conversion"])]
 
 setup(
     name='image_processing',

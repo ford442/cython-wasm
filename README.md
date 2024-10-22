@@ -13,6 +13,8 @@ sudo update-alternatives --set python3 /usr/bin/python3.12
 
 /content/RAMDRIVE2/emsdk/emsdk activate 3.1.58
 
+pip3 install setuptools
+
 pip3 install cython
 
 pip3 install exodide[all]

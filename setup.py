@@ -11,7 +11,7 @@ setup(
     ],
     ext_modules = cythonize("image_processing/image_processing.pyx",compiler_directives={'language_level' : "3"}),
     zip_safe=False,
-    cmdclass={"bdist_wheel": exodide_wheel(python_version="3.12")},  # Specify Python version
+    cmdclass=build.cmdclass(), # {'build': build.build, 'build_ext': build.build_ext}
     # Specify the Python version here
     python_requires='==3.12',
 )

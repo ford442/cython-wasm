@@ -1,6 +1,8 @@
 from setuptools import setup, Extension
 from Cython.Build import cythonize
-from exodide.build import exodide_wheel  # Correct import
+from exodide import build
+
+# omit
 
 ext_modules = [
     Extension("image_processing", ["image_processing.pyx"], include_dirs=[np.get_include()])
@@ -9,5 +11,5 @@ ext_modules = [
 setup(
     name="image_processing",
     ext_modules=cythonize(ext_modules),
-    cmdclass={"bdist_wheel": exodide_wheel},
+    cmdclass=build.cmdclass(), # {'build': build.build, 'build_ext': build.build_ext}
 )

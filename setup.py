@@ -17,5 +17,5 @@ setup(
     ],
     # omit
     cmdclass=build.cmdclass(), # {'build': build.build, 'build_ext': build.build_ext}
-    ext_modules = cythonize("image_processing/image_processing.pyx",compiler_directives={'language_level' : "3"}),
+    ext_modules = cythonize("image_processing/image_processing.pyx",compiler_directives={'language_level' : "3"},extra_compile_args=["-Wno-implicit-function-declaration","-Wno-int-conversion"]),
 )

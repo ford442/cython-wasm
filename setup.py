@@ -1,6 +1,8 @@
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 import numpy as np
+from exodide.build import exodide_wheel  # Import the command
+
 ext_modules = [Extension("image_processing", ["image_processing/image_processing.pyx"],extra_compile_args=["-Wno-implicit-function-declaration","-Wno-int-conversion"])]
 
 setup(
@@ -9,6 +11,3 @@ setup(
     ext_modules=cythonize(ext_modules)
 )
 
-# In your Python code
-from image_processing import process_tile
-e

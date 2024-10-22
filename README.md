@@ -11,6 +11,10 @@ sudo update-alternatives --set python3 /usr/bin/python3.12
 
 wget https://bootstrap.pypa.io/get-pip.py
 
+python3.12 -m venv .venv
+
+source .venv/bin/activate
+
 python3 ./get-pip.py
 
 /content/RAMDRIVE2/emsdk/emsdk install 3.1.58

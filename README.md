@@ -3,9 +3,9 @@ Adding cythonized module to pyodide:
 
 sudo apt install python3.12 libpython3.12-dev -y
 
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
 
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
 
 sudo update-alternatives --set python /usr/bin/python3.12
 

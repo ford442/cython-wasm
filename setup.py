@@ -12,7 +12,7 @@ setup(
     zip_safe=False,
     options={
         "build_ext": {
-        extra_compile_args==["-O3","-Wno-implicit-function-declaration","-Wno-int-conversion"]
+        extra_compile_args: ["-O3","-Wno-implicit-function-declaration","-Wno-int-conversion"]
         }
     },
     # Specify the Python version here

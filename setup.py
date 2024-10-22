@@ -5,7 +5,7 @@ from exodide import build
 # omit
 
 ext_modules = [
-    Extension("image_processing", ["image_processing.pyx"])
+    Extension("image_processing", ["image_processing/image_processing.pyx"])
 ]
 
 setup(

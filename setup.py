@@ -1,6 +1,6 @@
 from setuptools import setup, Extension
 from Cython.Build import cythonize
-from exodide.build import exodide_wheel
+from exodide.build import exodide_wheel  # Correct import
 
 ext_modules = [
     Extension("image_processing", ["image_processing.pyx"], include_dirs=[np.get_include()])

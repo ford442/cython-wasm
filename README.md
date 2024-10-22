@@ -1,6 +1,8 @@
 # cython-wasm
 Adding cythonized module to pyodide:
 
+sdo apt install python3.12 libpython3.12-dev -y
+
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 1
 
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 2
@@ -23,7 +25,7 @@ cython cytho_pyo.pyx
 
 source /content/RAMDRIVE2/emsdk/emsdk_env.sh
 
-CC=emcc CXX=em++ python setup.py --command-packages exodide exodide_wheel
+CC=emcc CXX=em++ python setup.py bdist_wheel
 
 
 

@@ -15,7 +15,8 @@ cpdef np.ndarray[np.uint8_t, ndim=2] process_tile(np.ndarray[np.uint8_t, ndim=2]
     M = cv2.getAffineTransform(input_pts, output_pts)
     dst = cv2.warpAffine(tile, M, (cols,rows))
     img_eq = exposure.equalize_hist(dst)
-    resize4x = transform.rescale(tile, 2)
-    result_1 = unsharp_mask(resize4x, radius=1, amount=1)
-    processed_tile = transform.pyramid_reduce(result_1, 2)
+ #   resize4x = transform.rescale(tile, 2)
+ #   result_1 = unsharp_mask(resize4x, radius=1, amount=1)
+ #   processed_tile = transform.pyramid_reduce(result_1, 2)
+    processed_tile = img_eq
     return processed_tile

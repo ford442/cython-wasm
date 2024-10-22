@@ -5,7 +5,7 @@ from skimage import exposure, transform
 from skimage.filters import unsharp_mask
 import cv2
 
-def np.ndarray[np.uint8_t, ndim=2] process_tile(np.ndarray[np.uint8_t, ndim=2] tile):
+cpdef np.ndarray[np.uint8_t, ndim=2] process_tile(np.ndarray[np.uint8_t, ndim=2] tile):
     cdef int rows, cols
     cdef np.ndarray[np.float32_t, ndim=2] input_pts, output_pts
     cdef np.ndarray[np.float32_t, ndim=2] M 

@@ -1,7 +1,7 @@
 # cython-wasm
 Adding cythonized module to pyodide:
 
-sdo apt install python3.12 libpython3.12-dev -y
+sudo apt install python3.12 libpython3.12-dev -y
 
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 1
 

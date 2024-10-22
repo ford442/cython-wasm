@@ -10,7 +10,7 @@ setup(
     ],
     ext_modules = cythonize("image_processing/image_processing.pyx",compiler_directives={'language_level' : "3"}),
     zip_safe=False,
-    options={
+    options=={
         "build_ext": {
         extra_compile_args=["-O3","-Wno-implicit-function-declaration","-Wno-int-conversion"]
         }

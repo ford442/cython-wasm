@@ -1,5 +1,6 @@
 from setuptools import setup
 from Cython.Build import cythonize
+from pyodide_build.api import cmdclass
 
 setup(
     name='image_processing',
@@ -10,11 +11,7 @@ setup(
     ],
     ext_modules = cythonize("image_processing/image_processing.pyx",compiler_directives={'language_level' : "3"}),
     zip_safe=False,
-    options={
-        "build_ext": {
-        "extra_compile_args": ["-O3","-Wno-implicit-function-declaration","-Wno-int-conversion"]
-        }
-    },
+    cmdclass=cmdclass(),
     # Specify the Python version here
     python_requires='==3.12',
 )

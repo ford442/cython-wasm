@@ -1,14 +1,13 @@
-from setuptools import setup
-from exodide import build
+from setuptools import setup, Extension
 from Cython.Build import cythonize
+from exodide.build import exodide_wheel
+
+ext_modules = [
+    Extension("image_processing", ["image_processing.pyx"], include_dirs=[np.get_include()])
+]
 
 setup(
-    name='image_processing',
-    version='0.1.0',
-    install_requires=[
-        'scikit-image',
-        'opencv-python'
-    ],
-    ext_modules = cythonize("image_processing/image_processing.pyx",compiler_directives={'language_level' : "3"}),
-    cmdclass=build.cmdclass(),
+    name="image_processing",
+    ext_modules=cythonize(ext_modules),
+    cmdclass={"bdist_wheel": exodide_wheel},
 )

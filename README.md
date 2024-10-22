@@ -9,11 +9,15 @@ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 
 
 sudo update-alternatives --set python3 /usr/bin/python3.12
 
+wget https://bootstrap.pypa.io/get-pip.py
+
+python3 ./get-pip.py
+
 /content/RAMDRIVE2/emsdk/emsdk install 3.1.58
 
 /content/RAMDRIVE2/emsdk/emsdk activate 3.1.58
 
-pip3 install setuptools
+pip3 install --upgrade setuptools
 
 pip3 install cython
 

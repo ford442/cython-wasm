@@ -1,6 +1,6 @@
 from setuptools import setup
 from Cython.Build import cythonize
-from pyodide_build import cmdclass
+from exodide import build
 
 setup(
     name='image_processing',

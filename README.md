@@ -41,7 +41,7 @@ cd cython-wasm
 
 source /content/RAMDRIVE2/emsdk/emsdk_env.sh
 
-CFLAGS=-O3,-Wno-implicit-function-declaration,-Wno-int-conversion pyodide build
+CFLAGS=-Wno-implicit-function-declaration,-Wno-int-conversion pyodide build
 
 
 5. Integration with Pyodide

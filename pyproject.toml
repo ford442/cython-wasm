@@ -1,9 +1,9 @@
 [project]
-name = "image_processing"
+name = "image_proc"
 version = "0.1.0"
 
 [tool.pyodide-build]
-packages = ["image_processing"]
+packages = ["image_proc"]
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel", "cython"]

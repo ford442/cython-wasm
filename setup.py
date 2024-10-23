@@ -18,4 +18,5 @@ setup(
     url="https://github.com/ford442/cython-wasm",
     packages=["image_processing"],
     ext_modules=cythonize(extensions),
+    include_dirs=[numpy.get_include()]
 )

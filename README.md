@@ -35,6 +35,8 @@ pip3 install pyodide
 
 pip3 install pyodide-build
 
+pip3 install --upgrade wheel
+
 git clone https://github.com/ford442/cython-wasm.git
 
 cd cython-wasm

@@ -23,22 +23,25 @@ python3 ./get-pip.py
 
 pip3 install --upgrade setuptools
 
+pip3 install setuptools-cython
+
 pip3 install numpy
 
 pip3 install cython
 
 pip3 install exodide[all]
 
+pip3 install pyodide
+
+pip3 install pyodide-build
+
 git clone https://github.com/ford442/cython-wasm.git
 
 cd cython-wasm
 
-cython cytho_pyo.pyx
-
 source /content/RAMDRIVE2/emsdk/emsdk_env.sh
 
-CC=emcc CXX=em++ python setup.py bdist_wheel
-
+CFLAGS=-O3,-Wno-implicit-function-declaration,-Wno-int-conversion pyodide build
 
 
 5. Integration with Pyodide

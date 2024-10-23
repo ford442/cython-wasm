@@ -1,8 +1,13 @@
 from setuptools import setup
+from setuptools.extension import Extension
 from Cython.Build import cythonize
 
-# Define your custom compile arguments
-extra_compile_args = ["-O3","-Wno-implicit-function-declaration","-Wno-int-conversion"]
+extensions = [
+    Extension(   
+        "image_processing",
+        ["image_processing/image_processing.pyx"],
+    ),
+]
 
 setup(
     name="image_processing",
@@ -12,11 +17,5 @@ setup(
     author_email="admin@1ink.us",
     url="https://github.com/ford442/cython-wasm",
     packages=["image_processing"],
-    ext_modules=cythonize(
-        "image_processing/image_processing.pyx",
-        compiler_directives={"language_level": "3"},
-        build_dir="build",
-        annotate=True,
-        extra_compile_args=extra_compile_args  # Use extra_compile_args instead of compile_args
-    ),
+    ext_modules=cythonize(extensions),
 )

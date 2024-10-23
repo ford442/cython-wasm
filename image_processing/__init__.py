@@ -1,2 +1,2 @@
 
-from .image_processing import process_tile
+from image_processing import process_tile

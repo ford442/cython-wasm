@@ -3,7 +3,7 @@ from setuptools.extension import Extension
 from Cython.Build import cythonize
 
 extensions = [
-    Extension(   
+    Extension(
         "image_processing",
         ["image_processing/image_processing.pyx"],
     ),

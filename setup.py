@@ -6,7 +6,7 @@ import numpy
 extensions = [
     Extension(
         "image_processing",
-        ["image_processing/image_processing.pyx"],
+        ["image_processing/_image_processing.pyx"],
     ),
 ]
 

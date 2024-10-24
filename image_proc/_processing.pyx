@@ -23,7 +23,7 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     M = cv2.getAffineTransform(input_pts, output_pts)
     N = M.astype(np.float32)
     tile2 = tile.astype(np.float32)
-    del tile
+    #del tile
     dst = cv2.warpAffine(tile2, N, (cols,rows))
     del tile2
     resize4x = transform.rescale(dst, 2)
@@ -32,4 +32,4 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     del resize4x
     processed_tile = transform.pyramid_reduce(result_1, 2)
     del result_1
-    return processed_tile
+    return tile

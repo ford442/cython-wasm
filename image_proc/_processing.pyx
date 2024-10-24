@@ -10,7 +10,6 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     cdef np.ndarray[np.float32_t, ndim=2] input_pts, output_pts,
     cdef np.ndarray[np.float64_t, ndim=2] M
     cdef np.ndarray[np.float32_t, ndim=2] N
-    cdef np.ndarray[np.float32_t, ndim=3] tile3
     cdef np.ndarray[np.float64_t, ndim=3] dst, tile2,img_eq, resize4x, result_1, processed_tile
     rows, cols = tile.shape[:2]
     input_pts = np.array([[0,0], [cols-1,0], [0,rows-1]], dtype=np.float32)
@@ -19,9 +18,7 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     N = M.astype(np.float32)
     tile2 = tile.astype(np.float64)
     dst = cv2.warpAffine(tile2, N, (cols,rows))
-    tile3 = dst.astype(np.float32)
-    img_eq = exposure.equalize_hist(tile3)
-    del tile3
+    img_eq = exposure.equalize_hist(dst)
     del tile2
     del tile
     del dst

@@ -17,10 +17,11 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     M = cv2.getAffineTransform(input_pts, output_pts)
     N = M.astype(np.float32)
     tile2 = tile.astype(np.float64)
-    del tile
     dst = cv2.warpAffine(tile2, N, (cols,rows))
-    img_eq = exposure.equalize_hist(tile2)
+    tile = tile2.astype(np.float32)
+    img_eq = exposure.equalize_hist(tile)
     del tile2
+    del tile
     del dst
     resize4x = transform.rescale(img_eq, 2)
     del img_eq

@@ -10,8 +10,8 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     cdef np.ndarray[np.float32_t, ndim=2] input_pts, output_pts,
     cdef np.ndarray[np.float64_t, ndim=2] M
     cdef np.ndarray[np.float32_t, ndim=2] N
-    cdef np.ndarray[np.float64_t, ndim=3] dst, tile2,processed_tile
-    cdef np.ndarray[np.float64_t, ndim=3] resize4x, result_1
+    cdef np.ndarray[np.float32_t, ndim=3] processed_tile
+    cdef np.ndarray[np.float64_t, ndim=3] dst, tile2,resize4x, result_1
     rows, cols = tile.shape[:2]
     input_pts = np.array([[0,0], [cols-1,0], [0,rows-1]], dtype=np.float32)
     output_pts = np.array([[cols-1,0], [0,0], [cols-1,rows-1]], dtype=np.float32)

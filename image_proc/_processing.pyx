@@ -19,8 +19,8 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     N = M.astype(np.float32)
     tile2 = tile.astype(np.float64)
     dst = cv2.warpAffine(tile2, N, (cols,rows))
-    tile3 = tile2.astype(np.float32)
-    img_eq = exposure.equalize_hist(tile)
+    tile3 = dst.astype(np.float32)
+    img_eq = exposure.equalize_hist(tile3)
     del tile3
     del tile2
     del tile

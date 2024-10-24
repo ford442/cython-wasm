@@ -30,7 +30,6 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     resize4x = transform.rescale(dst, 2)
     del dst
     result_1 = unsharp_mask(resize4x, radius=1, amount=1)
-    # result_1 = (result_1 - result_1.min()) / (result_1.max() - result_1.min()) * 255
     del resize4x
     processed_tile = transform.pyramid_reduce(result_1, 2).astype(np.float32)
-    return result_1
+    return processed_tile

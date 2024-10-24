@@ -17,7 +17,7 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     M = cv2.getAffineTransform(input_pts, output_pts)
     N = M.astype(np.float32)
     tile2 = tile.astype(np.float32)
-    dst = cv2.warpAffine(tile, N, (cols,rows))
+    dst = cv2.warpAffine(tile2, N, (cols,rows))
     img_eq = exposure.equalize_hist(dst)
     resize4x = transform.rescale(tile, 2)
     result_1 = unsharp_mask(resize4x, radius=1, amount=1)

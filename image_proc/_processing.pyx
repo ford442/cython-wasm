@@ -19,8 +19,8 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     tile2 = tile.astype(np.float64)
     del tile
     dst = cv2.warpAffine(tile2, N, (cols,rows))
+    img_eq = exposure.equalize_hist(tile2)
     del tile2
-    img_eq = exposure.equalize_hist(dst)
     del dst
     resize4x = transform.rescale(img_eq, 2)
     del img_eq

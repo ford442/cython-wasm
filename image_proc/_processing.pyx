@@ -19,7 +19,7 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     N = M.astype(np.float32)
     #tile2 = tile.astype(np.float32)
     #del tile
-    dst = cv2.warpAffine(tile, N, (cols,rows))
+    dst = cv2.warpAffine(tile, N, (cols,rows)).astype(np.uint8)
     #del tile2
     resize4x = transform.rescale(dst, 2)
     del dst

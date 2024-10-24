@@ -26,4 +26,4 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     result_1 = unsharp_mask(resize4x, radius=1, amount=1)
     del resize4x
     processed_tile = transform.pyramid_reduce(result_1, 2).astype(np.uint8)
-    return processed_tile
+    return dst

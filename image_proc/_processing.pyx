@@ -5,6 +5,10 @@ from skimage import exposure, transform
 from skimage.filters import unsharp_mask
 import cv2
 
+cpdef np.ndarray[np.uint8_t, ndim=3] process_hist(np.ndarray[np.uint8_t, ndim=3] img):
+    processed_img = exposure.equalize_hist(img)
+    return processed_img
+
 cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3] tile):
     cdef int rows, cols
     cdef np.ndarray[np.float32_t, ndim=2] input_pts, output_pts,
@@ -18,13 +22,11 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     M = cv2.getAffineTransform(input_pts, output_pts)
     N = M.astype(np.float32)
     tile2 = tile.astype(np.float64)
-    dst = cv2.warpAffine(tile2, N, (cols,rows))
-    img_eq = exposure.equalize_hist(tile2)
-    del tile2
     del tile
+    dst = cv2.warpAffine(tile2, N, (cols,rows))
+    del tile2
+    resize4x = transform.rescale(dst, 2)
     del dst
-    resize4x = transform.rescale(img_eq, 2)
-    del img_eq 
     result_1 = unsharp_mask(resize4x, radius=1, amount=1)
     del resize4x
     processed_tile = transform.pyramid_reduce(result_1, 2)

@@ -5,7 +5,7 @@ from skimage import exposure, transform
 from skimage.filters import unsharp_mask
 import cv2
 
-cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3] tile):
+cpdef np.ndarray[np.uint8_t, ndim=3] process_hist(np.ndarray[np.uint8_t, ndim=3] tile):
     cdef np.ndarray[np.float32_t, ndim=3] img2
     img2 = exposure.equalize_hist(tile).astype(np.float32)
     return img2

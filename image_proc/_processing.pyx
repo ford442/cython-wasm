@@ -17,9 +17,14 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     M = cv2.getAffineTransform(input_pts, output_pts)
     N = M.astype(np.float32)
     tile2 = tile.astype(np.float64)
+    del tile
     dst = cv2.warpAffine(tile2, N, (cols,rows))
+    del tile2
     img_eq = exposure.equalize_hist(dst)
-    resize4x = transform.rescale(tile, 2)
+    del dst
+    resize4x = transform.rescale(img_eq, 2)
+    del img_eq
     result_1 = unsharp_mask(resize4x, radius=1, amount=1)
+    del resize4x
     processed_tile = transform.pyramid_reduce(result_1, 2)
     return processed_tile

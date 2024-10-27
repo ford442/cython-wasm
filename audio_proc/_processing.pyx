@@ -2,7 +2,7 @@ import essentia.standard as es
 from essentia import array
 cimport numpy as np 
 
-cdef analyze_birdsong(np.ndarray[np.float64_t, ndim=1] audio_data):
+cdef process_pitch(np.ndarray[np.float64_t, ndim=1] audio_data):
   """
   Analyzes birdsong audio to extract note information.
 

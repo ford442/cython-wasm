@@ -25,7 +25,7 @@ pip3 install --upgrade setuptools
 
 pip3 install setuptools-cython
 
-pip3 install numpy scikit-image opencv-python
+pip3 install numpy essentia
 
 pip3 install cython
 

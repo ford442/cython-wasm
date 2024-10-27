@@ -1,4 +1,3 @@
-from image_proc._processing import process_tile
-from image_proc._processing import process_hist
+from audio_proc._processing import process_pitch
 
-__all__ = ["process_tile"]
+__all__ = ["process_pitch"]

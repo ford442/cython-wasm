@@ -30,4 +30,4 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile2(np.ndarray[np.uint8_t, ndim=3
     del resize4x
     processed_tile = transform.pyramid_reduce(result_1, 2)
     del result_1
-    return dst
+    return processed_tile

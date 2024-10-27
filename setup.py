@@ -5,19 +5,19 @@ import numpy
 
 extensions = [
     Extension(
-        "image_proc._processing",
-        ["image_proc/_processing.pyx"],
+        "audio_proc._processing",
+        ["audio_proc/_processing.pyx"],
     ),
 ]
 
 setup(
-    name="image_proc",
+    name="audio_proc",
     version="0.1",
     description="A Pyodide-compatible package",
     author="1inkus",
     author_email="admin@1ink.us",
     url="https://github.com/ford442/cython-wasm",
-    packages=["image_proc"],
+    packages=["audio_proc"],
     ext_modules=cythonize(extensions),
     include_dirs=[numpy.get_include()]
 )

@@ -21,7 +21,7 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     dst = cv2.warpAffine(tile2, N, (cols,rows))
     return dst
 
-cpdef np.ndarray[np.uint8_t, ndim=3] process_tile2(np.ndarray[np.uint8_t, ndim=3] tile):
+cpdef np.ndarray[np.uint8_t, ndim=3] process_tile2(np.ndarray[np.float32_t, ndim=3] tile):
     cdef np.ndarray[np.float32_t, ndim=3] processed_tile
     cdef np.ndarray[np.float32_t, ndim=3] tile2, resize4x, result_1
     resize4x = transform.rescale(tile, 2)

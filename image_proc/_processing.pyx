@@ -39,4 +39,4 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile4(np.ndarray[np.float32_t, ndim
 cpdef np.ndarray[np.uint8_t, ndim=3] process_tile5(np.ndarray[np.float32_t, ndim=3] tile6):
     cdef np.ndarray[np.float32_t, ndim=3] processed_tile
     processed_tile: np.ndarray = transform.pyramid_reduce(tile6,2)
-    return resize4x
+    return processed_tile

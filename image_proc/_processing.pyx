@@ -30,3 +30,13 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile3(np.ndarray[np.float32_t, ndim
     cdef np.ndarray[np.float32_t, ndim=3] resize4x
     resize4x: np.ndarray = transform.rescale(tile4, 2)
     return resize4x
+
+cpdef np.ndarray[np.uint8_t, ndim=3] process_tile4(np.ndarray[np.float32_t, ndim=3] tile5):
+    cdef np.ndarray[np.float32_t, ndim=3] result_1
+    result_1: np.ndarray = unsharp_mask(tile5, radius=1, amount=1)
+    return result_1
+
+cpdef np.ndarray[np.uint8_t, ndim=3] process_tile5(np.ndarray[np.float32_t, ndim=3] tile6):
+    cdef np.ndarray[np.float32_t, ndim=3] processed_tile
+    processed_tile: np.ndarray = transform.pyramid_reduce(tile6,2)
+    return resize4x

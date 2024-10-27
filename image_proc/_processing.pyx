@@ -25,3 +25,8 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile2(np.ndarray[np.float32_t, ndim
     cdef np.ndarray[np.float32_t, ndim=3] img_eq
     img_eq: np.ndarray = exposure.equalize_hist(tile3)
     return img_eq
+
+cpdef np.ndarray[np.uint8_t, ndim=3] process_tile3(np.ndarray[np.float32_t, ndim=3] tile4):
+    cdef np.ndarray[np.float32_t, ndim=3] resize4x
+    resize4x: np.ndarray = transform.rescale(tile4, 2)
+    return resize4x

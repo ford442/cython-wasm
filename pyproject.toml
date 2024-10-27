@@ -1,9 +1,9 @@
 [project]
-name = "image_proc"
+name = "audio_proc"
 version = "0.1.0"
 
 [tool.pyodide-build]
-packages = ["image_proc"]
+packages = ["audio_proc"]
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel", "cython"]

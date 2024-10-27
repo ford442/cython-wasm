@@ -21,13 +21,7 @@ cpdef np.ndarray[np.uint8_t, ndim=3] process_tile(np.ndarray[np.uint8_t, ndim=3]
     dst = cv2.warpAffine(tile2, N, (cols,rows))
     return dst
 
-cpdef np.ndarray[np.uint8_t, ndim=3] process_tile2(np.ndarray[np.float32_t, ndim=3] tile):
-    cdef np.ndarray[np.float32_t, ndim=3] processed_tile
-    cdef np.ndarray[np.float32_t, ndim=3] tile2, resize4x, result_1
-    resize4x = transform.rescale(tile, 2)
-    del tile
-    result_1 = unsharp_mask(resize4x, radius=1, amount=1)
-    del resize4x
-    processed_tile = transform.pyramid_reduce(result_1, 2)
-    del result_1
-    return processed_tile
+cpdef np.ndarray[np.uint8_t, ndim=3] process_tile2(np.ndarray[np.float32_t, ndim=3] tile3):
+    cdef np.ndarray[np.float32_t, ndim=3] img_eq
+    img_eq: np.ndarray = exposure.equalize_hist(tile3)
+    return img_eq

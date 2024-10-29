@@ -12,7 +12,7 @@ extensions = [
 
 setup(
     name="image_proc",
-    version="0.1.2",
+    version="0.1.1",
     description="A Pyodide-compatible package",
     author="1inkus",
     author_email="admin@1ink.us",

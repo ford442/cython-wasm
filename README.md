@@ -45,8 +45,9 @@ source /content/RAMDRIVE2/emsdk/emsdk_env.sh
 
 python setup.py bdist_wheel
 
+export EMCC_CFLAGS="-ffinite-math-only -funsafe-math-optimizations -fno-trapping-math -fno-math-errno -mmutable-globals -mbulk-memory -matomics -mnontrapping-fptoint -msign-ext -fno-omit-frame-pointer -mextended-const -fexcess-precision=fast -msimd128 -mavx -m32 --target=wasm32 -O3 -ffast-math -ffp-contract=fast -fno-strict-aliasing"
 
-pyodide build --extension image_processing
+pyodide build
 
 
 5. Integration with Pyodide
